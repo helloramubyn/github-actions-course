@@ -1,0 +1,14 @@
+name: Push-Event Workflow
+on:
+  push:
+jobs:
+  push-demo-job:
+   runs-on: ubuntu-latest
+   steps:
+   - name: print Event Details
+     run: |
+      echo "Workflow triggered by Push Event"
+      echo "Deatils of my workflow"
+      echo "Event Name is : ${{ github.event_name }}"
+   
+ 
