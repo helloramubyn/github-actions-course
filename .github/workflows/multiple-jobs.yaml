@@ -1,0 +1,27 @@
+name: My First Multiple Jobs Workflow
+on:
+  workflow_dispatch:
+jobs:
+  my-first job: 
+    name: My First Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step 1 - Say Hello
+      run: |
+        sleep 20
+        echo "*****Welcome to My First Workflow"
+    - name: Step-2 - Date today?
+      run: date 
+    - name: Step-3 - Print Directory
+      run: pwd 
+  my-second job:
+    name: My second Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Say Hello Again
+      run: |
+        sleep 10
+        echo "*****Welcome to My Second Job"
+
+
+
