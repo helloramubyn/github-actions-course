@@ -1,6 +1,8 @@
 name: Push-Event Workflow
 on:
   push: # push to any branch, this will trigger workflow
+   branches: # branch filters
+   - main
   
 jobs:
   push-demo-job:
