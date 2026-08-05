@@ -1,0 +1,32 @@
+name: Job Dependency Workflow
+on:
+ workflow_dispatch
+jobs:
+  first-job:
+    name: build-job
+    runs-on: ubuntu-latest
+    steps:
+    - name: To build an application
+      run: |
+        sleep 10 
+        echo " Build application is success" 
+
+  second-job:
+    name: test-job
+    runs-on: ubuntu-latest
+    needs: build-job
+    steps:
+    - name: To test an application which is built in above first step
+      run: |
+        sleep 10 
+        echo " Testing application is success"       
+
+  third-job:
+    name: deploy-job
+    runs-on: ubuntu-latest
+    needs: test-job
+    steps:
+    - name: To deploy an application which is built and tested in 1st and 2nd steps respectively
+      run: |
+        sleep 10 
+        echo " Testing application is success"          
