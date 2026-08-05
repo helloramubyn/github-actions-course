@@ -2,7 +2,7 @@ name: My First Multiple Jobs Workflow
 on:
   workflow_dispatch:
 jobs:
-  my-first job: 
+  my-first-job: 
     name: My First Job
     runs-on: ubuntu-latest
     steps:
@@ -14,7 +14,7 @@ jobs:
       run: date 
     - name: Step-3 - Print Directory
       run: pwd 
-  my-second job:
+  my-second-job:
     name: My second Job
     runs-on: ubuntu-latest
     steps:
