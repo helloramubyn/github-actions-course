@@ -22,7 +22,7 @@ jobs:
             echo "Cores       : $(nproc)"
             echo "Memory      : $(free -h | awk '/^Mem:/ {print $2}')"
             echo "Disk Space  : $(df -h/ | awk 'NR==2 {print $4}')"
-        -name: pre Installed S/w
+        - name: pre Installed S/w
           run: |
             echo "================================"
             echo " Pre-Installed S/w Details "
