@@ -1,0 +1,37 @@
+name: Runner-Spec
+on:
+  workflow_dispatch:
+jobs:
+    runners-specifications:
+        runs-on: ubutnu-latest
+        steps:
+           - name: Print Specification Details
+             run: |
+             echo "================================"
+             echo " Details "
+             echo "================================"
+             echo "Runner OS           : {{ runnrer.os }}"
+             echo "Runner Architecture : {{ runner.arch }}"
+             echo "Runner workspace    : {{ runner.workspace }}"
+           - name: Machine Specifications
+             run: |
+             echo "================================"
+             echo " Machine Spec Details "
+             echo "================================"
+             echo "CPU         : $(lscpu | grep 'Model name' | awk -F ':' {print $2}' | xargs)"
+             echo "Cores       : $(nproc)"
+             echo "Memory      : $(free -h | awk '/^Mem:/ {print $2}')"
+             echo "Disk Space  : $(df -h/ | awk 'NR==2 {print $4}')"
+            -name: pre Installed S/w
+             run: |
+             echo "================================"
+             echo " Pre-Installed S/w Details "
+             echo "================================"
+             echo "Docker Version     : $(docker --version)"
+             echo "Node Version       : $(node --version)"
+             echo "Java Versionory    : $(java --version 2>1 | head -n 1)"
+           
+
+          
+
+
