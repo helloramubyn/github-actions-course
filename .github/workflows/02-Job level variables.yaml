@@ -4,7 +4,7 @@ on:
 jobs:
     dev-job:
        runs-on: ubuntu-latest
-       var:
+       env:
         ENVIRONMENT: "dev"
         APP_NAME: Academy
        steps:
