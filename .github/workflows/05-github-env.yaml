@@ -17,3 +17,5 @@ jobs:
           echo "trying to print the env variable in the next step"
           echo "APP_VERSION: $APP_VERSION"
           echo "Name: $Name"
+
+          # $GITHUB_ENV is a special file that GitHub Actions uses to set environment variables for subsequent steps in the workflow. When you write to this file, the variables you define will be available in the next steps of the job.
