@@ -1,0 +1,13 @@
+name: 07-github repo-variables
+on:
+  workflow_dispatch:
+jobs:
+  github-repo-variables-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  Print Repo Variables
+        run: |
+          echo "trying to print the repo variables"
+          echo "APP_NAME: ${{ vars.APP_NAME }}"
+          echo "DEPLOY_ENV: ${{ vars.DEPLOY_ENV }}"
+          echo "Registry: ${{ vars.REGISTRY }}"
