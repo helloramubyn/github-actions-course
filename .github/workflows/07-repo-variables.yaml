@@ -11,3 +11,11 @@ jobs:
           echo "APP_NAME: ${{ vars.APP_NAME }}"
           echo "DEPLOY_ENV: ${{ vars.DEPLOY_ENV }}"
           echo "Registry: ${{ vars.REGISTRY }}"
+  secrets-demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  Print Repo Secrets
+        run: |
+          echo "trying to print the repo secrets"
+          echo "My secret: ${{ env.MY_SECRET }}"
+                 
