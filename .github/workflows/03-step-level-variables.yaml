@@ -14,7 +14,7 @@ jobs:
            echo "Application Name is : $APP_NAME"
            echo "Environment Name is : $ENVIRONMENT"
        - name: Print Variables 2
-          env:
+         env:
             ENVIRONMENT: "staging"
             APP_NAME: Academy-Stage
          run: |
