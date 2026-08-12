@@ -1,0 +1,24 @@
+name: 02-Step-Level-Variables
+on:
+  workflow_dispatch
+jobs:
+    dev-job:
+       runs-on: ubuntu-latest
+       steps:
+       - name: Print Variables 1
+         env:
+            ENVIRONMENT: "dev"
+            APP_NAME: Academy
+         run: |
+           echo "printing environmnental variables from step-Print Variables 1"
+           echo "Application Name is : $APP_NAME"
+           echo "Environment Name is : $ENVIRONMENT"
+       - name: Print Variables 2
+          env:
+            ENVIRONMENT: "staging"
+            APP_NAME: Academy-Stage
+         run: |
+           echo "printing environmnental variables variables from step-Print Variables 2"
+           echo "Application Name is : $APP_NAME"
+           echo "Environment Name is : $ENVIRONMENT"  
+    
