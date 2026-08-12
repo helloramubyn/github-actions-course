@@ -1,0 +1,19 @@
+name: 04-variable-precedence
+on: 
+    workflow_dispatch:
+env:
+    APPLICATION_NAME: "app-workflow"        
+jobs:
+    dev-job:
+        runs-on: ubuntu-latest
+        env:
+            APPLICATION_NAME: "app-workflow-Job"  
+        steps:
+        - name: "app-workflow-Job"
+          env:
+            APPLICATION_NAME: "app-workflow-Step"  
+          run: |
+            echo "printing Environment Variables"
+            echo "Application Name: $APPLICATION_NAME"           
+
+    
