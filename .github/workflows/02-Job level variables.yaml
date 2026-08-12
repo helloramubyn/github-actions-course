@@ -15,7 +15,7 @@ jobs:
            echo "Environment Name is : $ENVIRONMENT"
     staging-job:
        runs-on: ubuntu-latest
-       var:
+       env:
         ENVIRONMENT: "staging"
         APP_NAME: Academy-Stage
        steps:
