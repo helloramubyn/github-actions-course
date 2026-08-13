@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       image-tag: ${{ steps.tag.outputs.value }}
-      #app-name: ${{ steps.app.outputs.value }}
+      #app-name: 
       actor-name: ${{ steps.app.outputs.value1 }}
     steps:
       - name: Generate Image Tag
