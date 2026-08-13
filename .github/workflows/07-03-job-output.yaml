@@ -1,0 +1,28 @@
+name: 07-03-Job-output
+on:
+  workflow_dispatch:
+jobs:
+    prepare-job:
+        name: prepare
+        runs-on: ubuntu-latest
+        outputs:
+            image-tag: ${{ steps.tag.outputs.value }}
+            app-name: ${{ steps.app.outputs.value }}
+        steps:
+        - name: Generate Image Tag
+           id: tag
+           run: |
+            echo "value={{ github.sha }}" >> $GITHUB_OUTPUT
+        - name: Set App Name
+           id: app
+           run: |
+            echo " value= Academy-Devops-Dashboard" >> $GITHUB_OUTPUT
+    build-job:     
+         name: Printing the output from previous job
+         runs-on: ubuntu-latest
+         needs: prepare-job
+         steps:
+         - name: Print Job Outputs
+           run: |
+             echo "Image Tag: ${{ needs.prepare-job.outputs.image-tag }}"
+             echo "App Name: ${{ needs.prepare-job.outputs.app-name }}"

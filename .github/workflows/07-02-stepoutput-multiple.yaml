@@ -11,7 +11,7 @@ jobs:
           echo "app-name=Academy-Devops-Dashboard" >> $GITHUB_OUTPUT
           echo "image-tag=${{ github.sha }}" >> GITHUB_OUTPUT
           echo "branch-name=${{ github.ref_name }}" >> $GITHUB_OUTPUT
-          echo "printing application name: ${{ steps.build.outputs.app-name }}"
+          echo
       - name: Read the step output
         run: |
            echo "============================"
