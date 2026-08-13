@@ -11,6 +11,7 @@ jobs:
           echo "app-name=Academy-Devops-Dashboard" >> $GITHUB_OUTPUT
           echo "image-tag=${{ github.sha }}" >> GITHUB_OUTPUT
           echo "branch-name=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          echo "printing application name: ${{ steps.build.outputs.app-name }}"
       - name: Read the step output
         run: |
            echo "============================"
@@ -22,5 +23,5 @@ jobs:
         run: |
            echo "============================"
            echo "creating docker image"
-           echo "helloramubyn/ ${{ steps.build.outputs.app-name }}:${{ steps.build.outputs.image-tag }} ."       
+           echo "helloramubyn/ ${{ steps.build.outputs.app-name }}:${{ steps.build.outputs.image-tag }}"       
       
