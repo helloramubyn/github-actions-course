@@ -10,12 +10,12 @@ jobs:
             app-name: ${{ steps.app.outputs.value }}
         steps:
         - name: Generate Image Tag
-           id: tag
-           run: |
+          id: tag
+          run: |
             echo "value={{ github.sha }}" >> $GITHUB_OUTPUT
         - name: Set App Name
-           id: app
-           run: |
+          id: app
+          run: |
             echo " value= Academy-Devops-Dashboard" >> $GITHUB_OUTPUT
     build-job:     
          name: Printing the output from previous job
