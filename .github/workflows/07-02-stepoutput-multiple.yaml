@@ -1,0 +1,21 @@
+name: 07-02step-output-multiple
+on:
+  workflow_dispatch:
+jobs:
+  multiple-output-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set multiple outputs
+        id: build
+        run: |
+          echo "app-name=Academy-Devops-Dashboard" >> $GITHUB_OUTPUT
+          echo "image-tag=${{ github.sha}}" >> GITHUB_OUTPUT
+          echo "branch-name=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+      - name: Read the step output
+        run: |
+           echo "============================"
+           echo "reading step output"
+           echo "App Name is: ${{ steps.build.outputs.app-name }}"
+           echo "Image Tag is: ${{ steps.build.outputs.image-tag }}"
+           echo "Branch Name is: ${{ steps.build.outputs.branch-name }}"    
+      
