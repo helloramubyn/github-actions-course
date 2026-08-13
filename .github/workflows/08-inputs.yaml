@@ -1,6 +1,6 @@
 name: Input Contexts
 on:
-    workfow_dispatch:
+    workflow_dispatch:
       inputs:
         environment:
             description: Target environment
