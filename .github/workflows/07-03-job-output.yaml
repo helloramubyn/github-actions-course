@@ -9,14 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       image-tag: ${{ steps.tag.outputs.value }}
-      #app-name: 
-      actor-name: ${{ steps.app.outputs.value1 }}
+      app-name: ${{ steps.app.outputs.value }}
+    
     steps:
       - name: Generate Image Tag
         id: tag
         run: |
           echo "value=${{ github.sha }}" >> $GITHUB_OUTPUT
-          echo "value1=${{ github.actor }}" >> $GITHUB_OUTPUT
 
       - name: Set App Name
         id: app
@@ -31,4 +30,5 @@ jobs:
       - name: Print Job Outputs
         run: |
           echo "Image Tag: ${{ needs.prepare-job.outputs.image-tag }}"
-          echo "Actor Name: ${{ needs.prepare-job.outputs.actor-name }}"
+          echo "App Name: ${{ needs.prepare-job.outputs.app-name }}"
+        
