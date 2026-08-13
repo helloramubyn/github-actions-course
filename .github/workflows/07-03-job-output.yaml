@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       image-tag: ${{ steps.tag.outputs.value }}
-      app-name: ${{ steps.app.outputs.value }}
+      #app-name: ${{ steps.app.outputs.value }}
       actor-name: ${{ steps.app.outputs.value1 }}
     steps:
       - name: Generate Image Tag
@@ -31,5 +31,5 @@ jobs:
       - name: Print Job Outputs
         run: |
           echo "Image Tag: ${{ needs.prepare-job.outputs.image-tag }}"
-          echo "App Name: ${{ needs.prepare-job.outputs.app-name }}"
+         # echo "App Name: ${{ needs.prepare-job.outputs.app-name }}"
           echo "Actor Name: ${{ needs.prepare-job.outputs.actor-name }}"
