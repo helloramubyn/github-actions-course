@@ -31,5 +31,5 @@ jobs:
       - name: Print Job Outputs
         run: |
           echo "Image Tag: ${{ needs.prepare-job.outputs.image-tag }}"
-         # echo "App Name: ${{ needs.prepare-job.outputs.app-name }}"
+         ## echo App Name: ##
           echo "Actor Name: ${{ needs.prepare-job.outputs.actor-name }}"
