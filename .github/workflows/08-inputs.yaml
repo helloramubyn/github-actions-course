@@ -3,20 +3,20 @@ on:
     workflow_dispatch:
       inputs:
         environment:
-            description: Target environment
-            type: choice
-            options:
-                - development
-                - staging
-                - production
-            version:
-                description: version to deploy
-                type: string
-                default: 'v1.0.0'
-            skip-tests:
-                description: Skip Tests?
-                type: boolean
-                default: false     
+        description: Target environment
+        type: choice
+        options:
+            - development
+            - staging
+            - production
+        version:
+            description: version to deploy
+            type: string
+            default: 'v1.0.0'
+        skip-tests:
+            description: Skip Tests?
+            type: boolean
+            default: false     
 jobs:
     input-context-demo:
         runs-on: ubuntu-latest
