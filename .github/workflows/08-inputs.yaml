@@ -1,0 +1,28 @@
+name: Input Contexts
+on:
+    workfow_dispatch
+      inputs:
+        environment:
+            description: Target environment
+            type: choice
+            options:
+                - development
+                - staging
+                - production
+            version:
+                description: version to deploy
+                type: string
+                default: 'v1.0.0'
+            skip-tests:
+                description: Skip Tests?
+                type: boolean
+                default: false     
+jobs:
+    input-context-demo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Input * context
+            run: |
+            echo "Environment to be deployed is : ${{ inputs.environment }}"
+            echo "Version to be deployed is : ${{ inputs.version }}"
+            echo "Tests to be skipped : ${{inputs.skip-tests}}"
